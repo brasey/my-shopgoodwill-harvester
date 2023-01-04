@@ -15,7 +15,6 @@ alexis bittar
 alice + olivia
 all saints
 alpaca
-alpaca
 altuzarra
 alviero martini
 american giant
@@ -28,8 +27,8 @@ anya hindmarch
 aquatalia
 aquazurra
 arborwear
-arcteryx
 arc'teryx
+arcteryx
 ariat
 armani collezione
 asprey
@@ -321,8 +320,8 @@ tibi
 tieks
 timberland
 tincati milano
-tods
 tod's
+tods
 tom ford
 tripp nyc
 tumi
