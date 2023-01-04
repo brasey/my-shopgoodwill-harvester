@@ -3,13 +3,18 @@
 
 import json
 from datetime import datetime, timedelta
+import os
 import re
 import requests
+from flask import Flask
 import firebase_admin
 from firebase_admin import firestore
 
 app = firebase_admin.initialize_app()
 db = firestore.client()
+
+listener = Flask(__name__)
+endpoint = os.getenv('ENDPOINT')
 
 def get_listings(search_term):
     """Call ItemListing endpoint and return results"""
@@ -52,13 +57,22 @@ def get_listings(search_term):
 
     return results
 
-search_terms_doc_ref = db.collection('config').document('search_terms')
-search_terms = search_terms_doc_ref.get().to_dict()["terms"]
+@listener.route(f"/{endpoint}")
+def trigger():
+    """Hitting the endpoint will trigger a call to get_listings()"""
+    search_terms_doc_ref = db.collection('config').document('search_terms')
+    search_terms = search_terms_doc_ref.get().to_dict()["terms"]
 
-for term in search_terms:
-    listings = []
-    listings.extend(get_listings(term))
-    for listing in listings:
-        listings_doc_ref = db.collection('listings').document(str(listing["item_id"]))
-        listings_doc_ref.set(listing)
-        print(listing)
+    for term in search_terms:
+        listings = []
+        listings.extend(get_listings(term))
+        for listing in listings:
+            listings_doc_ref = db.collection('listings').document(str(listing["item_id"]))
+            listings_doc_ref.set(listing)
+            print(listing)
+
+    return "SUCCESS"
+
+
+if __name__ == "__main__":
+    listener.run(host="127.0.0.1", port=int(os.environ.get("PORT", 8080)), debug=True)
