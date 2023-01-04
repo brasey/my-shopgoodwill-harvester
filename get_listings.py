@@ -2,9 +2,11 @@
 """Retrieve listed items"""
 
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
 import re
+import pytz
+from pytz import timezone
 import requests
 from flask import Flask
 import firebase_admin
@@ -44,8 +46,12 @@ def get_listings(search_term):
             end_time = re.sub(r"\.\d*$", '', item["endTime"])
             # convert time format with "T" separator
             end_time = datetime.strptime(end_time, "%Y-%m-%dT%H:%M:%S")
-            # convert PST to EST
-            end_time = end_time + timedelta(hours=3)
+            # Set PST timezone
+            pacific = timezone('US/Pacific')
+            end_time = pacific.localize(end_time)
+            # convert PST to UTC
+            utc = pytz.utc
+            end_time = end_time.astimezone(utc)
             results.append( {
                 "item_id": item["itemId"],
                 "title": item["title"],
