@@ -29,14 +29,11 @@ aquazurra
 arborwear
 arc'teryx
 arcteryx
-ariat
 armani collezione
 asprey
 assouline
 atelier mercadal
 bad birdie
-badgley mischka
-balenciaga
 bally
 balmain
 bao bao
@@ -46,7 +43,6 @@ birkenstock
 bke iffy
 blackcraft cult
 bolivia
-bottega v
 bottega veneta
 boucheron
 bourghese
@@ -57,7 +53,6 @@ burberry
 butter cloth
 bvlgari
 bylt
-carhartt
 carlos falchi
 carolina herrera
 cartier
@@ -73,10 +68,7 @@ christian dior
 christian lacroix
 christopher kane
 clergerie
-coach
-comme des garcon
 comme des garcons
-converse
 cosabella
 courreges
 criquet
@@ -85,22 +77,18 @@ david yurman
 derek lam
 derek lam 10 crosby
 d&g
-diane von furstenberg
 dior
 dixxon
 dolce & gabanna
 donna karan
 dries van noten
-dr martens
 duckworth
 edgevale
 elizabeth & james
 emanuel ungaro
 emilio pucci
-equipment
 ermenegildo zegna
 erno lazlo
-escada
 eskander
 etro
 fabiana filippi
@@ -109,16 +97,12 @@ faithful the brand
 farm rio
 fendi
 ferragamo
-figs
 fiorucci
 fjallraven
 flint & tinder
-for love and lemons
-frame
 frank & eileen
 fred perry
 freenote cloth
-frye
 furla
 ganni
 gaultier
@@ -145,22 +129,18 @@ hermes
 herve leger
 hill city
 howler brothers
-hugo boss
 huk
 ibex
 i magnin
 ippolita
 iro
-isabelle marant
 isabel marant
 issey miyake
 italy
 jaanuu
-james perse
 japan
 jason wu
 jean paul gautier
-jeffrey cambell
 jeffrey campbell
 jil sander
 jimmy choo
@@ -211,7 +191,6 @@ manolo blahnik
 mansur gavriel
 mara hoffman
 marchese
-marc jacobs
 mark cross
 marni
 mary katrantzou
@@ -219,7 +198,6 @@ mathew williamson
 max mara
 mcm
 mcq by mcqueen
-milly
 missoni
 miu miu
 mizrahi
@@ -230,14 +208,12 @@ mont blanc
 montcler
 moschino
 mountain hardwear
-mountain headwear
 mugler
 mulberry
 nancy gonzalez
 narciso rodriguez
 natori
 nicolas kirkwood
-nicole miller
 nili lotan
 nina ricci
 obermeyer
@@ -256,12 +232,10 @@ paule ka
 paul smith
 pedro garcia
 pelagic
-pendleton
 perrin paris
 peru
 phillip lim
 piaget
-piazza sempione
 pierre balmain
 pierre cardin
 pierre hardy
@@ -269,10 +243,7 @@ prada
 proenza schouler
 public rec
 pucci
-puma
-quay
 rag & bone
-rails
 ralph lauren
 rapha
 red valentino
@@ -289,55 +260,40 @@ roland mouret
 sachin + babi
 saint laurent
 saucony
-schutz
 scotland
 sea
-see by chloe
 self portrait
 sergio rossi
 sigerson morrison
 smartwool
-soludos
 sonia rykiel
-sorel
 spain
-spanx
 stella mccartney
 st john
 tabitha simmons
-tag huer
 taylor stitch
 teddy fresh
 temperly london
 thaikoon
 the kooples
-the north face
 theory
 the row
 thiery mugler
-thiesen (?)
 tibi
-tieks
 timberland
 tincati milano
-tod's
 tods
 tom ford
-tripp nyc
-tumi
 turnbull & asser
 twillory
-ugg
-ula johnson
+ulla johnson
 ungaro
 valentino
 van cleef
-vans
 veronica beard
 versace
 victoria beckham
 victor + rolf
-vince
 vintage
 vivienne westwood
 vivienne westwood anglomania
@@ -345,8 +301,6 @@ vuori
 wallace & barnes
 western rise
 willis & geiger
-wolford
-woolrich
 yamamoto
 yohji yamamoto
 ysl
