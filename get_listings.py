@@ -63,9 +63,25 @@ def get_listings(search_term):
 
     return results
 
+def delete_old_listings():
+    """Delete all listing items older than 'now'"""
+    eastern = timezone('US/Eastern')
+    now = eastern.localize(datetime.now())
+    expired_docs = db.collection('listings').where(
+        'end_time', '<', now
+    ).stream()
+    for doc in expired_docs:
+        item_id = str(doc.to_dict()['item_id'])
+        db.collection('listings').document(item_id).delete()
+
 @listener.route(f"/{endpoint}")
 def trigger():
-    """Hitting the endpoint will trigger a call to get_listings()"""
+    """
+    Hitting the endpoint will trigger a call to get_listings()
+    It will also delete all expired listing items.
+    """
+    delete_old_listings()
+
     search_terms_doc_ref = db.collection('config').document('search_terms')
     search_terms = search_terms_doc_ref.get().to_dict()["terms"]
 
