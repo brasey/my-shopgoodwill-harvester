@@ -63,26 +63,6 @@ def get_listings(search_term):
 
     return results
 
-def delete_sold_listings(current_listings):
-    """
-    Delete sold listings.
-    Find the difference between current listings retrieved from shopgoodwill
-    and what we have persisted in the database. Delete the difference.
-    """
-    persisted_listings = []
-    db_docs = db.collection('listings').stream()
-    for doc in db_docs:
-        item_id = str(doc.to_dict()['item_id'])
-        persisted_listings.append(item_id)
-
-    persisted_listings_set = set(persisted_listings)
-    current_listings_set = set(current_listings)
-    sold_items_set = persisted_listings_set.difference(current_listings_set)
-    sold_items = list(sold_items_set)
-    print(sold_items)
-    for item in sold_items:
-        db.collection('listings').document(item).delete()
-
 def delete_old_listings():
     """Delete all listing items older than 'now'"""
     eastern = timezone('US/Eastern')
@@ -105,18 +85,14 @@ def trigger():
     search_terms_doc_ref = db.collection('config').document('search_terms')
     search_terms = search_terms_doc_ref.get().to_dict()["terms"]
 
-    current_listings = []
     for term in search_terms:
         listings = []
         listings.extend(get_listings(term))
         for listing in listings:
-            item_id = str(listing['item_id'])
-            listings_doc_ref = db.collection('listings').document(item_id)
+            listings_doc_ref = db.collection('listings').document(str(listing["item_id"]))
             listings_doc_ref.set(listing)
-            current_listings.append(item_id)
             print(listing)
 
-    delete_sold_listings(current_listings)
     return "SUCCESS"
 
 
