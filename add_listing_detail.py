@@ -33,11 +33,19 @@ def trigger():
         ).where(
             'end_time', '<=', end_time
         ).order_by(
-            'end_time', direction=firestore.Query.ASCENDING
+            'end_time'
         ).stream()
 
+    listings = []
+
+    # Fetch all the listings for today.
+    # If we don't do this, the "stream()" above will timeout
+    # while we're looking up item details in the next loop.
     for doc in firebase_docs:
         listing = doc.to_dict()
+        listings.append(listing)
+
+    for listing in listings:
         # Look up bids and price for each item
         item_id = listing['item_id']
         headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'}
