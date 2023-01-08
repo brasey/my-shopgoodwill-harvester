@@ -90,7 +90,7 @@ def trigger():
         listings.extend(get_listings(term))
         for listing in listings:
             listings_doc_ref = db.collection('listings').document(str(listing["item_id"]))
-            listings_doc_ref.set(listing)
+            listings_doc_ref.set(listing, merge=True)
             print(listing)
 
     return "SUCCESS"
