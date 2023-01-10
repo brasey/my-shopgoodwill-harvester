@@ -89,6 +89,15 @@ def trigger():
         listings = []
         listings.extend(get_listings(term))
         for listing in listings:
+
+            # Is it St. John's Bay? DO NOT WANT
+            if term == 'st john':
+                title = listing['title']
+                title = title.lower()
+                pattern = r"st\.* *john'*s* *bay"
+                if bool(re.search(pattern, title)):
+                    continue
+
             listings_doc_ref = db.collection('listings').document(str(listing["item_id"]))
             listings_doc_ref.set(listing, merge=True)
             print(listing)
