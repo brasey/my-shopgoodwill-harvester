@@ -42,6 +42,8 @@ def get_listings(search_term):
         for item in response["searchResults"]["items"]:
             # imageURL returns with a mix of forward and backward slashes. Make them all forward.
             image_url = item["imageURL"].replace('\\', '/')
+            # imageURL returns with a space sometimes. Remove spaces.
+            image_url = image_url.replace(' ', '')
             # sometimes endTime has trailing fractions of a second, e.g. "0.75"
             end_time = re.sub(r"\.\d*$", '', item["endTime"])
             # convert time format with "T" separator
